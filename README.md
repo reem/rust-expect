@@ -38,11 +38,14 @@ fn main() {
         Point { x: 0.0, y: 0.0 },
     );
 
+
     square
         .expect(Contains(Point { x: 0.5, y: 0.18 }))
-        .expect(Contains(Point { x: 0.63, y: 0.4 }))
-        .expect(Contains(Point { x: 0.7, y: 0.85 }))
-        .expect(Contains(Point { x: 0.12, y: 0.9 }));
+        .expect(Contains(Point { x: 0.12, y: 0.9 }))
+
+        // You can also use tuples of Assertions.
+        .expect((Contains(Point { x: 0.63, y: 0.4 }),
+                 Contains(Point { x: 0.7, y: 0.85 })));
 }
 ```
 
